@@ -6,6 +6,7 @@ import ProsCons from "@/components/ProsCons";
 import BankingTable from "@/components/BankingTable";
 import BonusCard from "@/components/BonusCard";
 import TagList from "@/components/TagList";
+import ReviewJsonLd from "@/components/ReviewJsonLd";
 import type { Metadata } from "next";
 
 interface PageProps {
@@ -21,8 +22,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const review = getReviewBySlug(slug);
   if (!review) return {};
   return {
-    title: `${review.name} Review — BetRx`,
+    title: `${review.name} Review`,
     description: review.summary,
+    openGraph: {
+      title: `${review.name} Review — BetRx`,
+      description: review.summary,
+      type: "article",
+    },
+    alternates: {
+      canonical: `https://betrx.vercel.app/review/${slug}`,
+    },
   };
 }
 
@@ -32,6 +41,8 @@ export default async function ReviewPage({ params }: PageProps) {
   if (!review) notFound();
 
   return (
+    <>
+    <ReviewJsonLd review={review} />
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Hero */}
       <div className="flex flex-col sm:flex-row items-start gap-6 mb-10">
@@ -164,5 +175,6 @@ export default async function ReviewPage({ params }: PageProps) {
         </a>
       </div>
     </div>
+    </>
   );
 }

@@ -15,9 +15,34 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "BetRx — Sportsbook Reviews & Ratings",
+  title: {
+    default: "BetRx — Sportsbook Reviews & Ratings",
+    template: "%s | BetRx",
+  },
   description:
     "Expert sportsbook reviews, ratings, and comparisons. Find the best betting sites with honest analysis of bonuses, payouts, and betting options.",
+  metadataBase: new URL("https://betrx.vercel.app"),
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    siteName: "BetRx",
+    title: "BetRx — Sportsbook Reviews & Ratings",
+    description:
+      "Expert sportsbook reviews, ratings, and comparisons. Find the best betting sites with honest analysis of bonuses, payouts, and betting options.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "BetRx — Sportsbook Reviews & Ratings",
+    description:
+      "Expert sportsbook reviews, ratings, and comparisons. Find the best betting sites.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://betrx.vercel.app",
+  },
 };
 
 export default function RootLayout({
