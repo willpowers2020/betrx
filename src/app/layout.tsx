@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   verification: {
-    google: "Qy-R6u23yqeTwQT_XiPZUtYEeBmTyhHOB5r_sIaEVaE",
+    google: "iOWej3f92uSMdeZ6a8Tl41IcRF4WWQ5JncYnhQMg0oE",
   },
   alternates: {
     canonical: "https://betrx.vercel.app",
