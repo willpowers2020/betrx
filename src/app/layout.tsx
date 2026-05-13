@@ -40,6 +40,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  verification: {
+    google: "Qy-R6u23yqeTwQT_XiPZUtYEeBmTyhHOB5r_sIaEVaE",
+  },
   alternates: {
     canonical: "https://betrx.vercel.app",
   },
