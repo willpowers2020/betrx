@@ -1,4 +1,5 @@
 import { reviews } from "@/data/reviews";
+import { guides } from "@/data/guides";
 import type { MetadataRoute } from "next";
 
 const BASE_URL = "https://betrx.vercel.app";
@@ -19,5 +20,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  return [...staticPages, ...reviewPages];
+  const guidePages = guides.map((g) => ({
+    url: `${BASE_URL}/guides/${g.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
+  return [...staticPages, ...reviewPages, ...guidePages];
 }

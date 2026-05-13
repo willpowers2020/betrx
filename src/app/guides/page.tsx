@@ -124,9 +124,10 @@ export default function GuidesPage() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {section.items.map((guide) => (
-                <article
+                <Link
                   key={guide.slug}
-                  className="bg-surface-light border border-white/10 rounded-2xl p-6 hover:border-brand/30 transition-colors group"
+                  href={`/guides/${guide.slug}`}
+                  className="bg-surface-light border border-white/10 rounded-2xl p-6 hover:border-brand/30 transition-colors group block"
                 >
                   <div className="flex items-center gap-2 mb-3">
                     <span className="text-[10px] uppercase tracking-widest text-brand/70 font-semibold">
@@ -142,7 +143,7 @@ export default function GuidesPage() {
                   <span className="text-sm text-brand font-semibold">
                     Read guide &rarr;
                   </span>
-                </article>
+                </Link>
               ))}
             </div>
           </section>
